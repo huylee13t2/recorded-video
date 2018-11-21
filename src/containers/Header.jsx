@@ -2,6 +2,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import {withRouter} from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -66,7 +67,7 @@ class Header extends React.Component {
       
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            <IconButton className={classes.menuButton} onClick={() => this.props.history.push("/") } color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" className={classes.grow}>
@@ -111,4 +112,4 @@ Header.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Header);
+export default withRouter(withStyles(styles)(Header));

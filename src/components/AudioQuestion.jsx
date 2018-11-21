@@ -12,7 +12,6 @@ class AudioQuestion extends React.Component {
 
     handleEndAudio = () => {
         console.log("handleEndAudio");
-        this.props.endAsk();
     }
 
     render() {
