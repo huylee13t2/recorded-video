@@ -1,0 +1,21 @@
+.loginPage{
+  width: 500px;
+  margin: 20% auto;
+  .formLogin{
+    h3{
+      margin: 0;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .actionPage{
+      overflow: hidden;
+      padding: 15px 0;
+      .linkPage{
+
+      }
+      .btnLogin{
+        float: right;
+      }
+    }
+  }
+}

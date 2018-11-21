@@ -1,0 +1,76 @@
+.list_question{
+  padding: 0 !important;
+  .title{
+    margin: 0;
+    color: #666;
+    padding: 16px;
+    background: #4156b5;
+    color: #fff;
+    text-align: left;
+  }
+  .questions{
+    .play-item{
+      text-align: left;
+      padding: 7px 16px;
+      border-bottom: 1px solid #ddd;
+      h3{
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .react-audio-player{
+        
+      }
+      &:first-child{
+        border-top: 1px solid #ddd;
+      }
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+}
+.ba-videorecorder-theme-modern-container{
+  width: 100% !important;
+  height: auto !important;
+}
+.ba-videoplayer-theme-modern-container{
+  width: 100% !important;
+  height: auto !important;
+}
+.zigg_recorder{
+  div{
+    width: 100
+  }
+}
+.icon_button{
+  margin: 0 !important;
+}
+.btn_stop{
+}
+.ba-videorecorder-theme-modern-rightbutton-container{
+  // display: none;
+}
+.recorderBg{
+  background: url(../images/mic.png) no-repeat top center;
+  background-size: contain;
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 300px;
+  bottom: 115px;
+  left: 0;
+  right: 0;
+}
+.recorderBg1{
+  background: url(../images/mic.png) no-repeat top center;
+  background-size: contain;
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 300px;
+  bottom: 115px;
+  left: 0;
+  right: 0;
+}

@@ -1,3 +1,6 @@
+body{
+  /* background: #f8f8f8; */
+}
 .App {
   text-align: center;
 }
@@ -29,4 +32,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.ba-videorecorder-theme-modern-container{
+  width: 100% !important;
+  height: auto !important;
+}
+.recorderVideo{
+  position: relative;
+}
+.recorderBg{
+  background: url(./assets/images/mic.png) no-repeat top center;
+  background-size: contain;
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 300px;
+  bottom: 115px;
+  left: 0;
+  right: 0;
+}
+.ba-videoplayer-theme-modern-container{
+  width: 100% !important;
+  height: auto !important;
+}
+.ba-videorecorder-theme-modern-dashboard{
+  z-index: 15;
+  background: #61dafb;
 }

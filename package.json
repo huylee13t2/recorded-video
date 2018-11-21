@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.4.0",
+    "@material-ui/icons": "^3.0.1",
     "react": "^16.6.0",
+    "react-audio-player": "^0.11.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.1.1"
+    "react-h5-audio-player": "^1.1.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "react-ziggeo": "^3.3.0",
+    "serve": "^10.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,5 +28,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.19.1"
+  }
 }
