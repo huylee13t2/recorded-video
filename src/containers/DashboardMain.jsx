@@ -60,7 +60,7 @@ class DashboardMain extends React.Component {
           <div className="content">
             <Switch>
               <Route exact path={this.props.match.url} component={Dashboard} />
-              <Route exact path={`${this.props.match.url}recorder-video`} component={Recorder} />
+              <Route exact path={`${this.props.match.url}recorder-video/:conferenceId`} component={Recorder} />
             </Switch>
           </div>
 

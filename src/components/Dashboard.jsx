@@ -20,10 +20,9 @@ class Dashboard extends React.Component {
     this.setState({ anchorEl: null });
   };
 
-  handleSelect = value => {
+  handleSelect = async value => {
     console.log(value)
-    console.log(this.props);
-    this.props.history.push("/recorder-video");
+    await this.props.history.push(`/recorder-video/${value}`);
   }
 
   render() {

@@ -44,12 +44,6 @@ class RecorderVideo extends React.Component {
     super(props);
     this.state = {
       videoToken: null,
-      isStart: false,
-      showBg: false,
-      isPlayAudio: false,
-      srcAudio: null,
-      showAsk: false,
-      isDisabled: false,
     }
   }
 
@@ -58,19 +52,17 @@ class RecorderVideo extends React.Component {
   }
 
   componentDidMount = () => {
-    this.child.record();
+    // this.child.record();
     console.log(this.child);
   }
 
-  recorderRecording = () => {
+  recorderRecording = async () => {
     console.log('Recorder onRecording');
-    this.setState({ isPlayAudio: true });
-
+    await this.props.showBackground(true);
   };
 
   recorderUploaded = () => {
     console.log('Recorder onUploaded');
-    this.setState({ showBg: false });
   };
 
   playing = () => {
@@ -81,24 +73,20 @@ class RecorderVideo extends React.Component {
     console.log('it\'s paused, your action when pause');
   };
 
-  onUploaded = e => {
+  onUploaded = async e => {
     console.log("onUploaded")
     // console.log(e)
     // this.setState({ videoToken: e.video })
-    this.setState({ isPlayAudio: false });
-    this.setState({ showBg: false });
+    await this.props.showBackground(false);
   }
 
   onAttached = e => {
     console.log("onAttached")
     // console.log(e)
-    // this.setState({ showBg: true });
-    // this.setState({ isPlayAudio: true })
   }
 
   onUploadProgress = () => {
     console.log("onUploadProgress")
-    this.setState({ showBg: true });
   }
 
   onLoaded = e => {
@@ -115,48 +103,21 @@ class RecorderVideo extends React.Component {
     // console.log(e)
   }
 
-  onPlaying = e => {
-    console.log("onPlaying")
-    // console.log(e)
-    this.setState({ showBg: true })
-  }
-
-  onPaused = () => {
-    console.log("onPaused")
-  }
-
-  onEnded = e => {
-    console.log("onEnded")
-    // console.log(e)
-    this.setState({ showBg: false })
-  }
-
-  onSeek = e => {
-    console.log("onSeek")
-    // console.log(e)
-  }
-
-  onError = e => {
-    console.log("onError")
-    // console.log(e)
-  }
-
   onManuallySubmitted = () => {
     console.log("onManuallySubmitted")
   }
 
   onRecordingProgress = () => {
     // console.log("onRecordingProgress")
-    this.setState({ showBg: true })
   }
 
   onAccessForbidden = () => {
     console.log("onAccessForbidden")
   }
 
-  onAccessGranted = () => {
+  onAccessGranted = async () => {
     console.log("onAccessGranted")
-    // this.setState({ showBg: true })
+    await this.props.showBackground(true);
   }
 
   onCameraUnresponsive = () => {
@@ -187,7 +148,6 @@ class RecorderVideo extends React.Component {
     // this.child.hidePopup();
     // this.child.reset();
 
-    this.setState({ isStart: true });
   }
 
   handlStopRecorder = () => {
@@ -234,7 +194,7 @@ class RecorderVideo extends React.Component {
           className="zigg_recorder"
           onRef={ref => (this.child = ref)}
         />
-        <div className="action_recorder">
+        {/* <div className="action_recorder">
           <Button
             className={`btn_stop ${classes.button}`}
             variant="outlined"
@@ -244,7 +204,7 @@ class RecorderVideo extends React.Component {
             <Icon className={`icon_button ${classes.icon}`} >stop</Icon>
             End Recorder
           </Button>
-        </div>
+        </div> */}
       </div>
     )
   }

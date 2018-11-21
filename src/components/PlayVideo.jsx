@@ -9,20 +9,23 @@ class PlayVideo extends React.Component {
     }
   }
 
-  onPlaying = e => {
+  componentWillMount = async () => {
+  }
+
+  onPlaying = async e => {
     console.log("onPlaying")
     // console.log(e)
-    this.setState({ showBg: true })
+    await this.props.showBackground(true);
   }
 
   onPaused = () => {
     console.log("onPaused")
   }
 
-  onEnded = e => {
+  onEnded = async e => {
     console.log("onEnded")
     // console.log(e)
-    this.setState({ showBg: false })
+    await this.props.showBackground(true);
   }
 
   onSeek = e => {
@@ -30,7 +33,7 @@ class PlayVideo extends React.Component {
     // console.log(e)
   }
 
-  onAttached = e => {
+  onAttached = async e => {
     console.log("onAttached")
     // console.log(e)
     // this.setState({ showBg: true });
