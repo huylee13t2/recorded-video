@@ -100,7 +100,7 @@ class Recorder extends React.Component {
     return (
       <div className={`recorderVideo`}>
         <Grid container spacing={24}>
-          <Grid item xs={12} sm={8}>
+          <Grid item lg={8} md={8} sm={12} xs={12}>
             <Paper className={classes.paper} style={{ position: "relative" }}>
               {
                 showBg && <div className="recorderBg"></div>
@@ -141,7 +141,7 @@ class Recorder extends React.Component {
 
             </Paper>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item lg={4} md={4} sm={12} xs={12}>
             <Paper className={`list_question ${classes.paper}`}>
               <h3 className="title">Questions</h3>
               {

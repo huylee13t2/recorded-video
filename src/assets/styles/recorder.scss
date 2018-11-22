@@ -74,3 +74,38 @@
   left: 0;
   right: 0;
 }
+
+
+// ======================================================
+// ======================= Media ========================
+// ======================================================
+
+@media (max-width: 1499px) {
+  .recorderBg{
+    height: 200px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .recorderBg{
+    height: 120px;
+  }
+}
+
+@media (max-width: 991px) {
+  .recorderBg{
+
+  }
+}
+
+@media (max-width: 767px) {
+  .recorderBg{
+
+  }
+}
+
+@media (max-width: 575px) {
+  .recorderBg{
+
+  }
+}

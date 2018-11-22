@@ -1,12 +1,9 @@
 import React from 'react';
-import { node, PropTypes } from "prop-types";
+import PropTypes from 'prop-types';
 import { Route, Switch } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
-import {
-  Header,
-  SliderBar,
-} from './index';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { Header, SliderBar } from '.';
 import { Dashboard } from '../components';
 import Recorder from './Recorder';
 
@@ -17,31 +14,75 @@ const styles = theme => ({
     display: 'flex',
   },
   appBar: {
-    width: `calc(100% - ${drawerWidth}px)`,
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
     marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
+    marginLeft: 12,
+    marginRight: 36,
+  },
+  hide: {
+    display: 'none',
   },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
+    whiteSpace: 'nowrap',
   },
-  drawerPaper: {
+  drawerOpen: {
     width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
   },
-  toolbar: theme.mixins.toolbar,
+  drawerClose: {
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    overflowX: 'hidden',
+    width: theme.spacing.unit * 7 + 1,
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing.unit * 9 + 1,
+    },
+  },
+  toolbar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar,
+  },
   content: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
   },
 });
 
 class DashboardMain extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
+    openBar: false,
+  };
 
-    }
-  }
+  handleDrawerOpen = () => {
+    this.setState({ openBar: true });
+  };
+
+  handleDrawerClose = () => {
+    this.setState({ openBar: false });
+  };
 
   render() {
     const { classes } = this.props;
@@ -49,11 +90,19 @@ class DashboardMain extends React.Component {
     return (
       <div className={classes.root}>
         <CssBaseline />
+        
+        <Header
+          openBar={this.state.openBar}
+          handleDrawerOpen={this.handleDrawerOpen}
+          handleDrawerClose={this.handleDrawerClose}
+        />
 
-        <Header />
-
-        <SliderBar />
-
+        <SliderBar
+          openBar={this.state.openBar}
+          handleDrawerClose={this.handleDrawerClose}
+          handleDrawerOpen={this.handleDrawerOpen}
+        />
+        
         <main className={classes.content}>
           <div className={classes.toolbar} />
 
@@ -65,6 +114,7 @@ class DashboardMain extends React.Component {
           </div>
 
         </main>
+
       </div>
     );
   }
@@ -72,7 +122,7 @@ class DashboardMain extends React.Component {
 
 DashboardMain.propTypes = {
   classes: PropTypes.object.isRequired,
-  children: node,
+  theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(DashboardMain);
+export default withStyles(styles, { withTheme: true })(DashboardMain);
