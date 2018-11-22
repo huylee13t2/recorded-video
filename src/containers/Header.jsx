@@ -120,7 +120,7 @@ class Header extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
-              Mini variant drawer
+              <span onClick={() => this.props.history.push("/") } >Mini variant drawer</span>
             </Typography>
           </Toolbar>
         </AppBar>
