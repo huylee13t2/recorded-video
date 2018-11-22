@@ -144,81 +144,86 @@ class Recorder extends React.Component {
           <Grid item xs={12} sm={4}>
             <Paper className={`list_question ${classes.paper}`}>
               <h3 className="title">Questions</h3>
-
-                <div className="questions">
-                  <div className="play-item">
-                    <h3>Question 1</h3>
-                    <AudioQuestion srcAudio={question1} endAsk={this.endAsk} />
+              {
+                (conferenceId === '3' || conferenceId === '1') && (
+                  <div className="questions">
+                    <div className="play-item">
+                      <h3>Question 1</h3>
+                      <AudioQuestion srcAudio={question1} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 2</h3>
+                      <AudioQuestion srcAudio={question2} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 3</h3>
+                      <AudioQuestion srcAudio={question3} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 4</h3>
+                      <AudioQuestion srcAudio={question4} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 5</h3>
+                      <AudioQuestion srcAudio={question5} endAsk={this.endAsk} />
+                    </div>
                   </div>
-                  <div className="play-item">
-                    <h3>Question 2</h3>
-                    <AudioQuestion srcAudio={question2} endAsk={this.endAsk} />
-                  </div>
-                  <div className="play-item">
-                    <h3>Question 3</h3>
-                    <AudioQuestion srcAudio={question3} endAsk={this.endAsk} />
-                  </div>
-                  <div className="play-item">
-                    <h3>Question 4</h3>
-                    <AudioQuestion srcAudio={question4} endAsk={this.endAsk} />
-                  </div>
-                  <div className="play-item">
-                    <h3>Question 5</h3>
-                    <AudioQuestion srcAudio={question5} endAsk={this.endAsk} />
-                  </div>
-                </div>
-
-              {/* {
-                conferenceId && conferenceId === '2' &&
-                <div className="questions">
-                <div className="play-item">
-                  <h3>Question 6</h3>
-                  <AudioQuestion srcAudio={question6} endAsk={this.endAsk} />
-                </div>
-                <div className="play-item">
-                  <h3>Question 7</h3>
-                  <AudioQuestion srcAudio={question7} endAsk={this.endAsk} />
-                </div>
-                <div className="play-item">
-                  <h3>Question 8</h3>
-                  <AudioQuestion srcAudio={question8} endAsk={this.endAsk} />
-                </div>
-                <div className="play-item">
-                  <h3>Question 9</h3>
-                  <AudioQuestion srcAudio={question9} endAsk={this.endAsk} />
-                </div>
-                <div className="play-item">
-                  <h3>Question 10</h3>
-                  <AudioQuestion srcAudio={question10} endAsk={this.endAsk} />
-                </div>
-              </div>
+                )
               }
 
               {
-                conferenceId && conferenceId === '3' || conferenceId === '5' &&
-                <div className="questions">
-                <div className="play-item">
-                  <h3>Question 11</h3>
-                  <AudioQuestion srcAudio={question11} endAsk={this.endAsk} />
-                </div>
-                <div className="play-item">
-                  <h3>Question 12</h3>
-                  <AudioQuestion srcAudio={question12} endAsk={this.endAsk} />
-                </div>
-                <div className="play-item">
-                  <h3>Question 13</h3>
-                  <AudioQuestion srcAudio={question13} endAsk={this.endAsk} />
-                </div>
-                <div className="play-item">
-                  <h3>Question 14</h3>
-                  <AudioQuestion srcAudio={question14} endAsk={this.endAsk} />
-                </div>
-                <div className="play-item">
-                  <h3>Question 15</h3>
-                  <AudioQuestion srcAudio={question15} endAsk={this.endAsk} />
-                </div>
-              </div>
-              } */}
+                (conferenceId === '2' || conferenceId === '4') && (
+                  <div className="questions">
+                    <div className="play-item">
+                      <h3>Question 6</h3>
+                      <AudioQuestion srcAudio={question6} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 7</h3>
+                      <AudioQuestion srcAudio={question7} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 8</h3>
+                      <AudioQuestion srcAudio={question8} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 9</h3>
+                      <AudioQuestion srcAudio={question9} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 10</h3>
+                      <AudioQuestion srcAudio={question10} endAsk={this.endAsk} />
+                    </div>
+                  </div>
+                )
+              }
+
+              {
+                conferenceId === '5' && (
+                  <div className="questions">
+                    <div className="play-item">
+                      <h3>Question 11</h3>
+                      <AudioQuestion srcAudio={question11} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 12</h3>
+                      <AudioQuestion srcAudio={question12} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 13</h3>
+                      <AudioQuestion srcAudio={question13} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 14</h3>
+                      <AudioQuestion srcAudio={question14} endAsk={this.endAsk} />
+                    </div>
+                    <div className="play-item">
+                      <h3>Question 15</h3>
+                      <AudioQuestion srcAudio={question15} endAsk={this.endAsk} />
+                    </div>
+                  </div>
+                )
+              }
 
             </Paper>
           </Grid>

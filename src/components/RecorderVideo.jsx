@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
-import { ZiggeoRecorder } from 'react-ziggeo'; import {
-  Button,
-  Icon,
-} from '@material-ui/core/';
+import { ZiggeoRecorder } from 'react-ziggeo'; 
+// import {
+//   Button,
+//   Icon,
+// } from '@material-ui/core/';
 
 const styles = theme => ({
   root: {
@@ -53,7 +54,7 @@ class RecorderVideo extends React.Component {
 
   componentDidMount = () => {
     // this.child.record();
-    console.log(this.child);
+    // console.log(this.child);
   }
 
   recorderRecording = async () => {
@@ -158,7 +159,7 @@ class RecorderVideo extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
+    // const { classes } = this.props;
     return (
       <div>
         <ZiggeoRecorder

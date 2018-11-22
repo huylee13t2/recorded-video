@@ -18,9 +18,9 @@ class Main extends React.Component {
     return (
       <Router>
         <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="" exact component={DashboardMain} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
         </Switch>
       </Router>
     )

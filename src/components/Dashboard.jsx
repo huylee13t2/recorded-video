@@ -21,7 +21,6 @@ class Dashboard extends React.Component {
   };
 
   handleSelect = async value => {
-    console.log(value)
     await this.props.history.push(`/recorder-video/${value}`);
   }
 
