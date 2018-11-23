@@ -90,7 +90,7 @@ class DashboardMain extends React.Component {
     return (
       <div className={classes.root}>
         <CssBaseline />
-        
+
         <Header
           openBar={this.state.openBar}
           handleDrawerOpen={this.handleDrawerOpen}
@@ -102,7 +102,7 @@ class DashboardMain extends React.Component {
           handleDrawerClose={this.handleDrawerClose}
           handleDrawerOpen={this.handleDrawerOpen}
         />
-        
+
         <main className={classes.content}>
           <div className={classes.toolbar} />
 

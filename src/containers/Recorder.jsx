@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux'
 import {
   Button,
   Paper,
@@ -237,4 +238,14 @@ Recorder.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Recorder);
+const mapStateToProps = state => {
+  return {
+    user: state.user.user
+  }
+}
+
+const appRecorder = withStyles(styles)(Recorder);
+
+export default connect(
+  mapStateToProps,
+)(appRecorder);

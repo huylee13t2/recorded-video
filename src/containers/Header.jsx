@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -85,45 +85,32 @@ class Header extends React.Component {
     }
   }
 
-  handleChange = event => {
-    this.setState({ auth: event.target.checked });
-  };
-
-  handleMenu = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
-
-  handleClose = () => {
-    this.setState({ anchorEl: null });
-  };
-
   render() {
     const { classes } = this.props;
 
     return (
-
       <AppBar
-          position="fixed"
-          className={classNames(classes.appBar, {
-            [classes.appBarShift]: this.props.openBar,
-          })}
-        >
-          <Toolbar disableGutters={!this.props.openBar}>
-            <IconButton
-              color="inherit"
-              aria-label="Open drawer"
-              onClick={this.props.handleDrawerOpen}
-              className={classNames(classes.menuButton, {
-                [classes.hide]: this.state.openBar,
-              })}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" color="inherit" noWrap>
-              <span onClick={() => this.props.history.push("/") } >Mini variant drawer</span>
-            </Typography>
-          </Toolbar>
-        </AppBar>
+        position="fixed"
+        className={classNames(classes.appBar, {
+          [classes.appBarShift]: this.props.openBar,
+        })}
+      >
+        <Toolbar disableGutters={!this.props.openBar}>
+          <IconButton
+            color="inherit"
+            aria-label="Open drawer"
+            onClick={this.props.handleDrawerOpen}
+            className={classNames(classes.menuButton, {
+              [classes.hide]: this.state.openBar,
+            })}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" color="inherit" noWrap>
+            <span onClick={() => this.props.history.push("/")} >Mini variant drawer</span>
+          </Typography>
+        </Toolbar>
+      </AppBar>
     )
   }
 }

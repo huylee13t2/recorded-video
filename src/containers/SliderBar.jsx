@@ -92,43 +92,43 @@ class SliderBar extends React.Component {
 
     return (
       <Drawer
-          variant="permanent"
-          className={classNames(classes.drawer, {
+        variant="permanent"
+        className={classNames(classes.drawer, {
+          [classes.drawerOpen]: this.props.openBar,
+          [classes.drawerClose]: !this.props.openBar,
+        })}
+        classes={{
+          paper: classNames({
             [classes.drawerOpen]: this.props.openBar,
             [classes.drawerClose]: !this.props.openBar,
-          })}
-          classes={{
-            paper: classNames({
-              [classes.drawerOpen]: this.props.openBar,
-              [classes.drawerClose]: !this.props.openBar,
-            }),
-          }}
-          open={this.props.openBar}
-        >
-          <div className={classes.toolbar}>
-            <IconButton onClick={this.props.handleDrawerClose}>
-              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-            </IconButton>
-          </div>
-          <Divider />
-          <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-        </Drawer>
+          }),
+        }}
+        open={this.props.openBar}
+      >
+        <div className={classes.toolbar}>
+          <IconButton onClick={this.props.handleDrawerClose}>
+            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
     )
   }
 }
