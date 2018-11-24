@@ -132,12 +132,14 @@ class RecorderVideo extends React.Component {
     this.props.stopRecorder(e.video);
   }
 
-  onNoCamera = () => {
+  onNoCamera = e => {
     console.log("onNoCamera")
+    console.log(e)
   }
 
-  onNoMicrophone = () => {
+  onNoMicrophone = e => {
     console.log("onNoMicrophone")
+    console.log(e)
   }
 
   handleStart = () => {
@@ -187,8 +189,8 @@ class RecorderVideo extends React.Component {
           onAccessGranted={this.onAccessGranted}
           onCameraUnresponsive={this.onCameraUnresponsive}
           onVerified={e => this.onVerified(e)}
-          onNoCamera={this.onNoCamera}
-          onNoMicrophone={this.onNoMicrophone}
+          // onNoCamera={e => this.onNoCamera(e)}
+          // onNoMicrophone={e => this.onNoMicrophone(e)}
           theme={'modern'}
           themecolor={'green'}
           style={{ width: "100%" }}
